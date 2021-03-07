@@ -1,7 +1,11 @@
+import React from 'react';
+import { Products, NavBar } from './components';
 function App() {
 	return (
 		<div>
-			<h2>Love Moe</h2>
+			<h1>List Products</h1>
+			<NavBar />
+			<Products />
 		</div>
 	);
 }
