@@ -9,7 +9,7 @@ import {
 import { AddShoppingCart } from '@material-ui/icons';
 import React from 'react';
 import useStyles from './styles';
-Product.propTypes = {};
+
 
 function Product(props) {
 	const { product } = props;
@@ -17,7 +17,10 @@ function Product(props) {
 	return (
 		<div>
 			<Card className={classes.root}>
-				<CardMedia className={classes.media} title={product.name}></CardMedia>
+				<CardMedia
+					className={classes.media}
+					title={product.name}
+					image={product.url}></CardMedia>
 				<CardContent>
 					<div className={classes.cardContent}>
 						<Typography variant='h5' gutterBottom>
