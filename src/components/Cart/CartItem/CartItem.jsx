@@ -1,13 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import {
-	Typography,
 	Button,
 	Card,
 	CardActions,
 	CardContent,
-	CardMedia,
+	CardMedia, Typography
 } from '@material-ui/core';
+import React from 'react';
 import useStyles from './styles';
 
 function CartItem({ item }) {
