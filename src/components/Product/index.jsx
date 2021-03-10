@@ -20,17 +20,20 @@ function Product(props) {
 				<CardMedia
 					className={classes.media}
 					title={product.name}
-					image={product.url}></CardMedia>
+					image={product.media.source}></CardMedia>
 				<CardContent>
 					<div className={classes.cardContent}>
 						<Typography variant='h5' gutterBottom>
 							{product.name}
 						</Typography>
-						<Typography variant='h5'>{product.price}</Typography>
+						<Typography variant='h5'>
+							
+							{product.price.formatted_with_symbol}
+						
+						</Typography>
 					</div>
-					<Typography variant='h5' color='textSecondary'>
-						{product.description}
-					</Typography>
+					<Typography dangerouslySetInnerHTML={{__html: product.description}} variant='h5' color='textSecondary'/>
+						
 				</CardContent>
 				<CardActions disableSpacing className={classes.cardActions}>
 					<IconButton aria-label='Add to cart'>
