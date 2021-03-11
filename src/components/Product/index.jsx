@@ -12,7 +12,7 @@ import useStyles from './styles';
 
 
 function Product(props) {
-	const { product } = props;
+	const { product, onAddToCart } = props;
 	const classes = useStyles();
 	return (
 		<div>
@@ -27,16 +27,19 @@ function Product(props) {
 							{product.name}
 						</Typography>
 						<Typography variant='h5'>
-							
 							{product.price.formatted_with_symbol}
-						
 						</Typography>
 					</div>
-					<Typography dangerouslySetInnerHTML={{__html: product.description}} variant='h5' color='textSecondary'/>
-						
+					<Typography
+						dangerouslySetInnerHTML={{ __html: product.description }}
+						variant='h5'
+						color='textSecondary'
+					/>
 				</CardContent>
 				<CardActions disableSpacing className={classes.cardActions}>
-					<IconButton aria-label='Add to cart'>
+					<IconButton
+						aria-label='Add to cart'
+						onClick={() => onAddToCart(product.id, 1)}>
 						<AddShoppingCart />
 					</IconButton>
 				</CardActions>
