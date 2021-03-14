@@ -9,8 +9,12 @@ import { ShoppingCart } from '@material-ui/icons';
 import React from 'react';
 import logo from '../../assets/img/logo.png';
 import useStyles from './styles';
+import { Link, useLocation } from 'react-router-dom';
 function NavBar({ totalItem }) {
 	const classes = useStyles();
+	const location = useLocation();
+
+	
 	return (
 		<>
 			<AppBar position='fixed' color='inherit' className={classes.appBar}>
@@ -25,13 +29,21 @@ function NavBar({ totalItem }) {
 						HHQ Commerce
 					</Typography>
 					<div className={classes.grow}></div>
-					<div>
-						<IconButton aria-label='Show cart items' color='inherit'>
-							<Badge badgeContent={totalItem} color='secondary'>
-								<ShoppingCart />
-							</Badge>
-						</IconButton>
-					</div>
+					{
+						location.pathname === '/' && (	
+							<div className>
+								<IconButton
+									component={Link}
+									to='cart'
+									aria-label='Show cart items'
+									color='inherit'>
+									<Badge badgeContent={totalItem} color='secondary'>
+										<ShoppingCart />
+									</Badge>
+								</IconButton>
+							</div>
+						)
+					}
 				</Toolbar>
 			</AppBar>
 		</>
