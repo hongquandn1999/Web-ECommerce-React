@@ -42,11 +42,14 @@ function Cart(props) {
 						Empty Cart
 					</Button>
 					<Button
+						component={Link}
+						to="/checkout"
 						className={classes.checkoutButton}
 						size='large'
 						type='button'
 						variant='contained'
-						color='primary'>
+						color='primary'
+						>
 						Checkout
 					</Button>
 				</div>
